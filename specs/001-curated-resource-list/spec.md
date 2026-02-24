@@ -39,20 +39,18 @@ A first-time visitor lands on the awesome-spec-kit page and needs to quickly und
 
 ---
 
-### User Story 3 - Identify Resource Accessibility (Priority: P3)
+### User Story 3 - Identify Archived Resources (Priority: P3)
 
-A reader browsing the list encounters resources that may have access restrictions (paywalled content, login-required platforms, or archived/unmaintained projects). They need clear visual markers so they can set expectations before clicking through.
+A reader browsing the list encounters a resource that is no longer actively maintained but still contains substantively useful content. They need a clear marker so they understand the resource's maintenance status before investing time in it.
 
-**Why this priority**: Transparency about resource accessibility prevents frustration and builds trust. This is a polish feature that improves user experience but does not block the core browsing flow.
+**Why this priority**: Transparency about maintenance status prevents frustration and builds trust. This is a polish feature that improves user experience but does not block the core browsing flow.
 
-**Independent Test**: Can be tested by checking that every restricted resource has the appropriate marker and that no unrestricted resource is incorrectly marked.
+**Independent Test**: Can be tested by checking that every archived/unmaintained resource has the `[Archived]` marker and that no actively maintained resource is incorrectly marked.
 
 **Acceptance Scenarios**:
 
-1. **Given** a resource requires payment to access, **When** a reader views its entry, **Then** the entry includes a `[Paid]` marker.
-2. **Given** a resource requires login or registration, **When** a reader views its entry, **Then** the entry includes a `[Login Required]` marker.
-3. **Given** a resource is archived or no longer maintained, **When** a reader views its entry, **Then** the entry includes an `[Archived]` marker.
-4. **Given** a resource is freely and publicly accessible, **When** a reader views its entry, **Then** no access marker is present.
+1. **Given** a resource is archived or no longer maintained, **When** a reader views its entry, **Then** the entry includes an `[Archived]` marker.
+2. **Given** a resource is actively maintained, **When** a reader views its entry, **Then** no `[Archived]` marker is present.
 
 ---
 
@@ -74,7 +72,7 @@ A reader browsing the list encounters resources that may have access restriction
 - **FR-005**: Every resource entry MUST follow the format: `- [Resource Name](URL) — One-sentence description.` Descriptions MUST start with a capital letter and end with a period.
 - **FR-006**: Every link MUST point to the primary/canonical source for the resource.
 - **FR-007**: No resource MUST appear in more than one category.
-- **FR-008**: Resources with access restrictions MUST include the appropriate marker: `[Paid]`, `[Login Required]`, or `[Archived]`.
+- **FR-008**: All resources MUST be freely and publicly accessible. Paywalled or login-required resources MUST NOT be included. Archived but substantively useful resources MAY be included with an `[Archived]` marker.
 - **FR-009**: Categories with no qualifying resources MUST display a placeholder note inviting contributions.
 - **FR-010**: The README MUST include a "Contributing" section that links to contribution guidelines or briefly describes how to propose additions.
 - **FR-011**: The README MUST include a "License" section stating the project's license.
@@ -84,7 +82,7 @@ A reader browsing the list encounters resources that may have access restriction
 
 - **Resource Entry**: A single curated item consisting of a name, URL, one-sentence description, and optional access marker. Belongs to exactly one category.
 - **Category**: A named grouping of related resource entries. Defined by a `##` heading and listed in the table of contents. The initial set is: Tools, Tutorials, Articles, Example Projects.
-- **Access Marker**: An optional label (`[Paid]`, `[Login Required]`, `[Archived]`) attached to a resource entry to indicate access restrictions.
+- **Access Marker**: An optional `[Archived]` label attached to a resource entry to indicate the resource is no longer maintained but still substantively useful.
 
 ## Success Criteria *(mandatory)*
 
@@ -94,7 +92,7 @@ A reader browsing the list encounters resources that may have access restriction
 - **SC-002**: 100% of resource entries follow the constitution's required format (`- [Name](URL) — Description.`).
 - **SC-003**: 100% of links resolve to live, canonical URLs with no broken links or redirects.
 - **SC-004**: A first-time visitor can identify the list's purpose and navigate to any category within 30 seconds of opening the page.
-- **SC-005**: Every restricted resource is correctly marked with the appropriate access marker; no false markers exist.
+- **SC-005**: 100% of included resources are freely and publicly accessible. Archived resources are correctly marked with `[Archived]`.
 - **SC-006**: The list passes the awesome-lint validation tool (standard quality gate for awesome lists).
 
 ## Assumptions
