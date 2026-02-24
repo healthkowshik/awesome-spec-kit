@@ -37,10 +37,10 @@ A named grouping of related resource entries.
 
 **Initial categories** (in display order):
 
-1. **Tools** — Software that supports spec-driven development workflows.
-2. **Tutorials** — Step-by-step guides for learning spec-driven practices.
-3. **Articles** — Essays, case studies, and opinion pieces on spec-driven development.
-4. **Example Projects** — Open-source repositories that demonstrate spec-driven workflows.
+1. **Spec-Kit Ecosystem** — Core tools, extensions, integrations, and official resources for GitHub's spec-kit.
+2. **Guides** — Tutorials, courses, walkthroughs, and learning resources for spec-kit and SDD.
+3. **Articles** — Blog posts, analyses, thought pieces, and news coverage about spec-kit and SDD.
+4. **Community Projects** — Third-party projects, localizations, templates, and tools built with or for spec-kit.
 
 **Ordering**: Within a category, entries are listed alphabetically by name.
 
@@ -61,7 +61,7 @@ Resource Entry 0──1 Maintenance Note
 
 - A Category contains zero or more Resource Entries.
 - A Resource Entry belongs to exactly one Category.
-- A Resource Entry has at most one Access Marker.
+- A Resource Entry has at most one Maintenance Note.
 
 ## Validation Rules
 

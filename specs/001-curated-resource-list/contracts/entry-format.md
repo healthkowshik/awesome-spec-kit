@@ -1,6 +1,6 @@
 # Contract: Resource Entry Format
 
-**Version**: 1.0 | **Date**: 2026-02-24
+**Version**: 1.1 | **Date**: 2026-02-24
 
 ## Purpose
 
@@ -14,10 +14,10 @@ Defines the exact Markdown format every resource entry must follow in the awesom
 - [Resource Name](https://canonical-url.example) - One-sentence description starting with a capital letter and ending with a period.
 ```
 
-### Archived entry
+### Entry with maintenance note
 
 ```markdown
-- [Resource Name](https://canonical-url.example) [Archived] - One-sentence description starting with a capital letter and ending with a period.
+- [Resource Name](https://canonical-url.example) - One-sentence description (no longer maintained).
 ```
 
 ## Field Rules
@@ -27,8 +27,8 @@ Defines the exact Markdown format every resource entry must follow in the awesom
 | Resource Name | Non-empty text. Must match the resource's official/canonical name. |
 | URL | Must be HTTPS. Must resolve to a live page. Must be the canonical source (not a mirror or fork). Must not require login or payment. Must not have a trailing slash. |
 | Separator | Exactly ` - ` (space, hyphen-minus, space). Not an em-dash. |
-| Description | Exactly one sentence. First word must be capitalized (Capital, camelCase, PascalCase, CONSTANT, or UPPER case). Must end with `.`, `!`, or `?`. Must not start by repeating the resource name. |
-| Access Marker | Optional. Only `[Archived]` is permitted. Placed between the URL closing `)` and the separator ` - `. |
+| Description | Exactly one sentence. First word must be capitalized. Must end with `.`. Must not start by repeating the resource name. |
+| Maintenance Note | Optional. Only `(no longer maintained)` is permitted. Appended to description before the trailing period. |
 
 ## Category Heading Format
 
@@ -44,8 +44,12 @@ Defines the exact Markdown format every resource entry must follow in the awesom
 
 Entries within a category are listed alphabetically by Resource Name.
 
+## Scope
+
+Resources must be directly about GitHub's spec-kit or the spec-driven development methodology it implements. See spec.md Out of Scope section for exclusions.
+
 ## Validation
 
 This contract is validated by:
 1. `awesome-lint` (automated): Checks separator format, description punctuation, capitalization, duplicate links, and badge presence.
-2. Manual review: Checks URL liveness, canonical source, public accessibility, and content relevance.
+2. Manual review: Checks URL liveness, canonical source, public accessibility, content relevance, and scope compliance.
