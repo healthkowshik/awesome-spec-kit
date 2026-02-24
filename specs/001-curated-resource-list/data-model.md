@@ -17,10 +17,10 @@ A single curated item in the list.
 | Name | Text | Yes | Human-readable name of the resource. |
 | URL | URL | Yes | Must be canonical (primary source, not mirror/fork). Must resolve to a live page. Must be publicly accessible without login or payment. |
 | Description | Text | Yes | Exactly one sentence. Starts with capital letter. Ends with period. Must not repeat the resource name as its first word. |
-| Access Marker | Enum | No | Only valid value: `[Archived]`. Applied when the resource is no longer maintained but remains substantively useful. |
+| Maintenance Note | Text | No | Only valid value: "(no longer maintained)". Appended to description before the trailing period when the resource is no longer actively maintained. |
 
 **Markdown format**: `- [Name](URL) - Description.`
-(With optional marker: `- [Name](URL) [Archived] - Description.`)
+(With maintenance note: `- [Name](URL) - Description (no longer maintained).`)
 
 **Uniqueness**: A resource is uniquely identified by its canonical URL. No two entries may share the same URL (after normalization).
 
@@ -44,19 +44,19 @@ A named grouping of related resource entries.
 
 **Ordering**: Within a category, entries are listed alphabetically by name.
 
-### Access Marker
+### Maintenance Note
 
 | Value | Meaning |
 |-------|---------|
-| `[Archived]` | Resource is no longer actively maintained but still contains substantively useful content. |
+| "(no longer maintained)" | Resource is no longer actively maintained but still contains substantively useful content. |
 
-No other markers are used. Paid or login-required resources are excluded entirely.
+No other notes are used. Paid or login-required resources are excluded entirely.
 
 ## Relationships
 
 ```
 Category 1──* Resource Entry
-Resource Entry 0──1 Access Marker
+Resource Entry 0──1 Maintenance Note
 ```
 
 - A Category contains zero or more Resource Entries.

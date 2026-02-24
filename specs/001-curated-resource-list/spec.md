@@ -52,12 +52,12 @@ A reader browsing the list encounters a resource that is no longer actively main
 
 **Why this priority**: Transparency about maintenance status prevents frustration and builds trust. This is a polish feature that improves user experience but does not block the core browsing flow.
 
-**Independent Test**: Can be tested by checking that every archived/unmaintained resource has the `[Archived]` marker and that no actively maintained resource is incorrectly marked.
+**Independent Test**: Can be tested by checking that every archived/unmaintained resource includes "(no longer maintained)" in its description and that no actively maintained resource is incorrectly marked.
 
 **Acceptance Scenarios**:
 
-1. **Given** a resource is archived or no longer maintained, **When** a reader views its entry, **Then** the entry includes an `[Archived]` marker.
-2. **Given** a resource is actively maintained, **When** a reader views its entry, **Then** no `[Archived]` marker is present.
+1. **Given** a resource is archived or no longer maintained, **When** a reader views its entry, **Then** the description includes "(no longer maintained)" before the trailing period.
+2. **Given** a resource is actively maintained, **When** a reader views its entry, **Then** no maintenance status note is present in the description.
 
 ---
 
@@ -79,7 +79,7 @@ A reader browsing the list encounters a resource that is no longer actively main
 - **FR-005**: Every resource entry MUST follow the format: `- [Resource Name](URL) - One-sentence description.` The separator is a hyphen-minus (` - `), not an em-dash. Descriptions MUST start with a capital letter and end with a period.
 - **FR-006**: Every link MUST point to the primary/canonical source for the resource.
 - **FR-007**: No resource MUST appear in more than one category.
-- **FR-008**: All resources MUST be freely and publicly accessible. Paywalled or login-required resources MUST NOT be included. Archived but substantively useful resources MAY be included with an `[Archived]` marker.
+- **FR-008**: All resources MUST be freely and publicly accessible. Paywalled or login-required resources MUST NOT be included. Archived but substantively useful resources MAY be included with "(no longer maintained)" appended to the description.
 - **FR-009**: Categories with no qualifying resources MUST display a placeholder note inviting contributions.
 - **FR-010**: The README MUST include a "Contributing" section that links to contribution guidelines or briefly describes how to propose additions.
 - **FR-011**: The project MUST have a LICENSE file at the repository root. The README MUST NOT contain a "License" heading (awesome-lint forbids it).
@@ -89,7 +89,7 @@ A reader browsing the list encounters a resource that is no longer actively main
 
 - **Resource Entry**: A single curated item consisting of a name, URL, one-sentence description, and optional access marker. Belongs to exactly one category.
 - **Category**: A named grouping of related resource entries. Defined by a `##` heading and listed in the table of contents. The initial set is: Tools, Tutorials, Articles, Example Projects.
-- **Access Marker**: An optional `[Archived]` label attached to a resource entry to indicate the resource is no longer maintained but still substantively useful.
+- **Maintenance Note**: An optional "(no longer maintained)" phrase appended to a resource entry's description to indicate the resource is no longer actively maintained but still substantively useful.
 
 ## Success Criteria *(mandatory)*
 
@@ -99,7 +99,7 @@ A reader browsing the list encounters a resource that is no longer actively main
 - **SC-002**: 100% of resource entries follow the required format (`- [Name](URL) - Description.`) using hyphen-minus as separator.
 - **SC-003**: 100% of links resolve to live, canonical URLs with no broken links or redirects.
 - **SC-004**: A first-time visitor can identify the list's purpose and navigate to any category within 30 seconds of opening the page.
-- **SC-005**: 100% of included resources are freely and publicly accessible. Archived resources are correctly marked with `[Archived]`.
+- **SC-005**: 100% of included resources are freely and publicly accessible. Archived resources are correctly noted with "(no longer maintained)" in the description.
 - **SC-006**: The list passes the awesome-lint validation tool (standard quality gate for awesome lists).
 
 ## Assumptions

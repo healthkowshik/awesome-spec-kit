@@ -1,21 +1,16 @@
 <!--
   Sync Impact Report
   ==================
-  Version change: 1.0.0 → 1.0.1 (PATCH — relax one-entry-per-PR rule)
-  Modified principles: N/A (first version)
-  Added sections:
-    - Core Principles (3): Quality-First Curation, Consistent Structure,
-      Link Integrity
-    - Content Standards
-    - Contribution Workflow
-    - Governance
+  Version change: 1.0.1 → 1.0.2 (PATCH — align entry format with awesome-lint)
+  Modified principles:
+    - II. Consistent Structure: entry separator changed from em-dash (—)
+      to hyphen-minus (-) to comply with awesome-lint list-item rule.
+  Added sections: None
   Removed sections: None
   Templates requiring updates:
     - .specify/templates/plan-template.md ✅ no changes needed
-      (Constitution Check section is generic)
     - .specify/templates/spec-template.md ✅ no changes needed
     - .specify/templates/tasks-template.md ✅ no changes needed
-    - .specify/templates/commands/*.md ✅ no command files exist
   Follow-up TODOs: None
 -->
 
@@ -46,7 +41,7 @@ unfiltered dump of links is noise, not curation.
 All entries and categories MUST follow a uniform format:
 
 - Each entry MUST use the pattern:
-  `- [Resource Name](URL) — One-sentence description.`
+  `- [Resource Name](URL) - One-sentence description.`
 - Categories MUST be defined in the table of contents and use `##`
   headings.
 - Descriptions MUST be concise (one sentence), start with a capital
@@ -121,4 +116,4 @@ compliance with these principles.
   entries against current principles and remove those that no longer
   qualify.
 
-**Version**: 1.0.1 | **Ratified**: 2026-02-24 | **Last Amended**: 2026-02-24
+**Version**: 1.0.2 | **Ratified**: 2026-02-24 | **Last Amended**: 2026-02-24
