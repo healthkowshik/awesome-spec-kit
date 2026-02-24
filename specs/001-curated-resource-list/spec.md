@@ -3,6 +3,13 @@
 **Feature Branch**: `001-curated-resource-list`
 **Created**: 2026-02-24
 **Status**: Draft
+
+## Clarifications
+
+### Session 2026-02-24
+
+- Q: Should entry format use em-dash (`—`) or hyphen-minus (`-`) as separator? → A: Use hyphen-minus (`-`) consistently, per awesome-lint requirements.
+- Q: Should the README contain a "License" heading section? → A: No. License stays in the LICENSE file only; no heading in README.
 **Input**: User description: "Create the initial awesome-spec-kit curated resource list with categories for tools, tutorials, articles, and example projects related to spec-driven development and Spec-Kit workflows."
 
 ## User Scenarios & Testing *(mandatory)*
@@ -19,7 +26,7 @@ A developer interested in spec-driven development visits the awesome-spec-kit li
 
 1. **Given** a reader opens the README, **When** they view the table of contents, **Then** they see all defined categories listed as clickable anchor links.
 2. **Given** a reader clicks a category link in the table of contents, **When** the page scrolls, **Then** they land at the correct category heading with its entries visible below.
-3. **Given** a reader views any entry, **When** they read it, **Then** it follows the format `- [Resource Name](URL) — One-sentence description.` with a capital first letter and trailing period.
+3. **Given** a reader views any entry, **When** they read it, **Then** it follows the format `- [Resource Name](URL) - One-sentence description.` with a capital first letter and trailing period.
 4. **Given** a reader clicks any resource link, **When** the browser navigates, **Then** the link resolves to the primary/canonical source (not a mirror, fork, or redirect).
 
 ---
@@ -69,13 +76,13 @@ A reader browsing the list encounters a resource that is no longer actively main
 - **FR-002**: The README MUST contain a table of contents listing every category as a clickable anchor link.
 - **FR-003**: The README MUST include the following top-level categories: **Tools**, **Tutorials**, **Articles**, and **Example Projects**.
 - **FR-004**: Each category MUST use a `##` heading. Subcategories, if needed, MUST use `###` headings. No deeper nesting is permitted.
-- **FR-005**: Every resource entry MUST follow the format: `- [Resource Name](URL) — One-sentence description.` Descriptions MUST start with a capital letter and end with a period.
+- **FR-005**: Every resource entry MUST follow the format: `- [Resource Name](URL) - One-sentence description.` The separator is a hyphen-minus (` - `), not an em-dash. Descriptions MUST start with a capital letter and end with a period.
 - **FR-006**: Every link MUST point to the primary/canonical source for the resource.
 - **FR-007**: No resource MUST appear in more than one category.
 - **FR-008**: All resources MUST be freely and publicly accessible. Paywalled or login-required resources MUST NOT be included. Archived but substantively useful resources MAY be included with an `[Archived]` marker.
 - **FR-009**: Categories with no qualifying resources MUST display a placeholder note inviting contributions.
 - **FR-010**: The README MUST include a "Contributing" section that links to contribution guidelines or briefly describes how to propose additions.
-- **FR-011**: The README MUST include a "License" section stating the project's license.
+- **FR-011**: The project MUST have a LICENSE file at the repository root. The README MUST NOT contain a "License" heading (awesome-lint forbids it).
 - **FR-012**: The initial list MUST include at least 3 curated resources per category (12 total minimum) to demonstrate value from launch.
 
 ### Key Entities
@@ -89,7 +96,7 @@ A reader browsing the list encounters a resource that is no longer actively main
 ### Measurable Outcomes
 
 - **SC-001**: The README contains all four required categories, each with at least 3 curated entries (12+ total resources).
-- **SC-002**: 100% of resource entries follow the constitution's required format (`- [Name](URL) — Description.`).
+- **SC-002**: 100% of resource entries follow the required format (`- [Name](URL) - Description.`) using hyphen-minus as separator.
 - **SC-003**: 100% of links resolve to live, canonical URLs with no broken links or redirects.
 - **SC-004**: A first-time visitor can identify the list's purpose and navigate to any category within 30 seconds of opening the page.
 - **SC-005**: 100% of included resources are freely and publicly accessible. Archived resources are correctly marked with `[Archived]`.
@@ -101,4 +108,4 @@ A reader browsing the list encounters a resource that is no longer actively main
 - "Spec-driven development" encompasses specification-first workflows, structured planning tools, and frameworks that use formal specs to drive implementation — not limited to Spec-Kit itself.
 - The initial set of resources will be curated by the maintainer(s) based on personal knowledge and research; community contributions will expand the list over time.
 - The README.md in the repository root is the primary artifact for this feature. No additional pages or sites are required.
-- The license for the list itself follows the standard awesome-list convention (CC0 or CC-BY).
+- The license is defined in the LICENSE file at the repository root (currently MIT). No license heading appears in the README.
