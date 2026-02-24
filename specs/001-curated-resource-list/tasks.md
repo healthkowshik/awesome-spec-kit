@@ -52,13 +52,13 @@ This is a documentation-only project. All deliverables are Markdown files at the
 
 ### Implementation
 
-- [ ] T001 [US1] Write README.md scaffold with title case heading (`# Awesome Spec-Kit [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)`), one-paragraph scope description, and `## Contents` TOC with anchor links for Tools, Tutorials, Articles, Example Projects, and Contributing in README.md
-- [ ] T002 [US1] Add `## Tools` category with 10 curated entries from research.md R-005 (adr-tools, Ajv, AsyncAPI Generator, Buf CLI, Log4brains, OpenAPI Generator, Prism, Redocly CLI, Spectral, Swagger Editor) in alphabetical order, each following the entry format contract in README.md
-- [ ] T003 [US1] Add `## Tutorials` category with 4 curated entries from research.md R-005 (AsyncAPI Getting Started, AWS ADR Guide, Learn OpenAPI, OpenAPI Tutorial) in alphabetical order in README.md
-- [ ] T004 [US1] Add `## Articles` category with 4 curated entries from research.md R-005 (Allen Helton, Atlassian, GitHub Blog, Martin Fowler) in alphabetical order in README.md
-- [ ] T005 [US1] Add `## Example Projects` category with 5 curated entries from research.md R-005 (adr/madr, github/spec-kit, joelparkerhenderson/architecture-decision-record, OAI/OpenAPI-Specification, rust-lang/rfcs) in alphabetical order in README.md
-- [ ] T006 [US1] Add `## Contributing` section with brief description and link to contributing.md in README.md
-- [ ] T007 [P] [US1] Create contributing.md with project description, quality criteria derived from constitution principles, entry format requirements per contracts/entry-format.md, PR submission process, and review expectations in contributing.md
+- [x] T001 [US1] Write README.md scaffold with title case heading (`# Awesome Spec-Kit [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)`), one-paragraph scope description, and `## Contents` TOC with anchor links for Tools, Tutorials, Articles, Example Projects, and Contributing in README.md
+- [x] T002 [US1] Add `## Tools` category with 10 curated entries from research.md R-005 (adr-tools, Ajv, AsyncAPI Generator, Buf CLI, Log4brains, OpenAPI Generator, Prism, Redocly CLI, Spectral, Swagger Editor) in alphabetical order, each following the entry format contract in README.md
+- [x] T003 [US1] Add `## Tutorials` category with 4 curated entries from research.md R-005 (AsyncAPI Getting Started, AWS ADR Guide, Learn OpenAPI, OpenAPI Tutorial) in alphabetical order in README.md
+- [x] T004 [US1] Add `## Articles` category with 4 curated entries from research.md R-005 (Allen Helton, Atlassian, GitHub Blog, Martin Fowler) in alphabetical order in README.md
+- [x] T005 [US1] Add `## Example Projects` category with 5 curated entries from research.md R-005 (adr/madr, github/spec-kit, joelparkerhenderson/architecture-decision-record, OAI/OpenAPI-Specification, rust-lang/rfcs) in alphabetical order in README.md
+- [x] T006 [US1] Add `## Contributing` section with brief description and link to contributing.md in README.md
+- [x] T007 [P] [US1] Create contributing.md with project description, quality criteria derived from constitution principles, entry format requirements per contracts/entry-format.md, PR submission process, and review expectations in contributing.md
 
 **Checkpoint**: README.md has all four categories populated with 23 entries. Contributing guide exists. US1 and US2 acceptance scenarios are satisfied.
 
@@ -72,7 +72,7 @@ This is a documentation-only project. All deliverables are Markdown files at the
 
 ### Implementation
 
-- [ ] T008 [US3] Review all 23 resource entries for current maintenance status by checking each source URL, and add `[Archived]` marker (placed between URL closing `)` and separator ` - `) to any unmaintained resources in README.md
+- [x] T008 [US3] Review all 23 resource entries for current maintenance status by checking each source URL, and add `[Archived]` marker (placed between URL closing `)` and separator ` - `) to any unmaintained resources in README.md
 
 **Checkpoint**: All entries accurately reflect their maintenance status. US3 acceptance scenarios are satisfied.
 
@@ -82,9 +82,9 @@ This is a documentation-only project. All deliverables are Markdown files at the
 
 **Purpose**: Validation, metadata, and final quality checks across all deliverables.
 
-- [ ] T009 Run awesome-lint validation (`npx awesome-lint`) against README.md and fix any formatting issues (badge, TOC naming, list item format, heading style, spelling, duplicate links)
-- [ ] T010 Verify all 23 resource links resolve to live, canonical URLs with no redirects, broken links, or access restrictions
-- [ ] T011 Set GitHub repository description to "A curated list of resources for spec-driven development and Spec-Kit workflows" and add topics "awesome" and "awesome-list" via `gh repo edit`
+- [x] T009 Run awesome-lint validation (`npx awesome-lint`) against README.md and fix any formatting issues (badge, TOC naming, list item format, heading style, spelling, duplicate links)
+- [x] T010 Verify all 23 resource links resolve to live, canonical URLs with no redirects, broken links, or access restrictions
+- [x] T011 Set GitHub repository description to "A curated list of resources for spec-driven development and Spec-Kit workflows" and add topics "awesome" and "awesome-list" via `gh repo edit`
 
 **Checkpoint**: awesome-lint passes with zero warnings. All links verified live. GitHub metadata set. All success criteria (SC-001 through SC-006) are satisfied.
 
