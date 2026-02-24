@@ -1,117 +1,104 @@
-# Implementation Plan: Initial Curated Resource List
+# Implementation Plan: [FEATURE]
 
-**Branch**: `001-curated-resource-list` | **Date**: 2026-02-24 | **Spec**: [spec.md](spec.md)
-**Input**: Feature specification from `specs/001-curated-resource-list/spec.md`
+**Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
+**Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
+
+**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/plan-template.md` for the execution workflow.
 
 ## Summary
 
-Build the initial awesome-spec-kit README as a curated list of spec-driven development resources across four categories (Tools, Tutorials, Articles, Example Projects), with a contributing guide, awesome-lint compliance, and proper GitHub repository metadata. The primary artifact is a single README.md file conforming to awesome-list conventions.
+[Extract from feature spec: primary requirement + technical approach from research]
 
 ## Technical Context
 
-**Language/Version**: Markdown (no programming language)
-**Primary Dependencies**: awesome-lint (via npx, validation-only — not a project dependency)
-**Storage**: N/A (static files in git)
-**Testing**: awesome-lint, manual link verification
-**Target Platform**: GitHub (rendered Markdown on github.com)
-**Project Type**: Curated list (documentation-only)
-**Performance Goals**: N/A
-**Constraints**: Must pass awesome-lint validation; must comply with constitution principles
-**Scale/Scope**: 23 curated resources at launch across 4 categories; growing over time via community PRs
+<!--
+  ACTION REQUIRED: Replace the content in this section with the technical details
+  for the project. The structure here is presented in advisory capacity to guide
+  the iteration process.
+-->
+
+**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
+**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
+**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
+**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
+**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
+**Project Type**: [e.g., library/cli/web-service/mobile-app/compiler/desktop-app or NEEDS CLARIFICATION]  
+**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
+**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
+**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
 
 ## Constitution Check
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-### Pre-Design Check
-
-| Principle | Status | Notes |
-|-----------|--------|-------|
-| I. Quality-First Curation | PASS | All selected resources meet relevance, maintenance, documentation, and non-promotional criteria. See research.md R-005 for selection rationale. |
-| II. Consistent Structure | CONFLICT | Constitution specifies em-dash (`—`) in entry format, but awesome-lint requires hyphen-minus (`-`). Resolution: adopt hyphen-minus to pass lint; file follow-up to update constitution. See research.md R-002. |
-| III. Link Integrity | PASS | All links will be verified as canonical and live before inclusion. Duplicate detection is part of awesome-lint. |
-| Content Standards | PASS | All resources are on-topic, publicly accessible, non-duplicate, and correctly categorized. |
-| Contribution Workflow | PASS | This is the initial commit; contributing.md will be created to enable the PR-based workflow going forward. |
-
-### Post-Design Check
-
-| Principle | Status | Notes |
-|-----------|--------|-------|
-| I. Quality-First Curation | PASS | Resource selection documented in research.md R-005 with rationale per entry. |
-| II. Consistent Structure | PASS (with action) | Plan uses hyphen-minus format per awesome-lint. Constitution update deferred to follow-up issue. |
-| III. Link Integrity | PASS | Entry format contract (contracts/entry-format.md) enforces canonical URLs. Awesome-lint's `double-link` rule prevents duplicates. |
+[Gates determined based on constitution file]
 
 ## Project Structure
 
 ### Documentation (this feature)
 
 ```text
-specs/001-curated-resource-list/
-├── plan.md              # This file
-├── research.md          # Phase 0: Research findings and decisions
-├── data-model.md        # Phase 1: Logical data structure
-├── quickstart.md        # Phase 1: Validation and contribution guide
-├── contracts/
-│   └── entry-format.md  # Phase 1: Entry format contract
-├── checklists/
-│   └── requirements.md  # Spec quality checklist
-└── spec.md              # Feature specification
+specs/[###-feature]/
+├── plan.md              # This file (/speckit.plan command output)
+├── research.md          # Phase 0 output (/speckit.plan command)
+├── data-model.md        # Phase 1 output (/speckit.plan command)
+├── quickstart.md        # Phase 1 output (/speckit.plan command)
+├── contracts/           # Phase 1 output (/speckit.plan command)
+└── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
 ```
 
-### Source (repository root)
+### Source Code (repository root)
+<!--
+  ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
+  for this feature. Delete unused options and expand the chosen structure with
+  real paths (e.g., apps/admin, packages/something). The delivered plan must
+  not include Option labels.
+-->
 
 ```text
-/
-├── README.md            # The awesome list (primary artifact — rewritten)
-├── contributing.md      # Contribution guidelines (new)
-└── LICENSE              # MIT license (existing, unchanged)
+# [REMOVE IF UNUSED] Option 1: Single project (DEFAULT)
+src/
+├── models/
+├── services/
+├── cli/
+└── lib/
+
+tests/
+├── contract/
+├── integration/
+└── unit/
+
+# [REMOVE IF UNUSED] Option 2: Web application (when "frontend" + "backend" detected)
+backend/
+├── src/
+│   ├── models/
+│   ├── services/
+│   └── api/
+└── tests/
+
+frontend/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   └── services/
+└── tests/
+
+# [REMOVE IF UNUSED] Option 3: Mobile + API (when "iOS/Android" detected)
+api/
+└── [same as backend above]
+
+ios/ or android/
+└── [platform-specific structure: feature modules, UI flows, platform tests]
 ```
 
-**Structure Decision**: This is a documentation-only project. No source code directories, build systems, or test suites are needed. The deliverable is two Markdown files at the repository root.
+**Structure Decision**: [Document the selected structure and reference the real
+directories captured above]
 
-## Key Decisions from Research
+## Complexity Tracking
 
-| ID | Decision | Impact |
-|----|----------|--------|
-| R-001 | Conform to all awesome-lint rules | Drives README structure, badge, TOC naming, list item format |
-| R-002 | Use hyphen-minus (` - `) not em-dash (` — `) for entry separator | Deviates from current constitution; follow-up needed |
-| R-003 | No "License" heading in README | Deviates from spec FR-011's literal wording; satisfied by LICENSE file |
-| R-004 | Keep MIT license (don't switch to CC0) | Maintainer decision; awesome-lint only requires *a* license |
-| R-005 | 23 initial resources selected (10 tools, 4 tutorials, 4 articles, 5 example projects) | Exceeds FR-012 minimum of 12 |
-| R-006 | Set GitHub repo topics and description | Required for awesome-lint's `github` rule |
+> **Fill ONLY if Constitution Check has violations that must be justified**
 
-## Implementation Sequence
-
-### Phase 1: Core List (P1 — Browse Resources)
-
-1. Rewrite `README.md` with:
-   - Title case heading with awesome badge: `# Awesome Spec-Kit [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)`
-   - One-paragraph introduction describing the list's scope
-   - `## Contents` section with anchor links to all categories
-   - Four category sections (`## Tools`, `## Tutorials`, `## Articles`, `## Example Projects`) populated with curated entries from research.md R-005
-   - Each entry in the format: `- [Name](URL) - Description.`
-   - Entries alphabetically ordered within each category
-   - `## Contributing` section (brief, links to contributing.md)
-
-2. Create `contributing.md` with:
-   - What the list is about
-   - Quality criteria for submissions (derived from constitution)
-   - Entry format requirements (link to contracts/entry-format.md pattern)
-   - PR submission process
-   - Review expectations
-
-### Phase 2: Validation & Metadata (P2 + P3)
-
-3. Validate awesome-lint compliance:
-   - Run `npx awesome-lint` and fix any issues
-   - Verify all links resolve to live, canonical pages
-
-4. Set GitHub repository metadata:
-   - Add repo description
-   - Add "awesome" and "awesome-list" topics
-
-### Follow-up (out of scope for this feature)
-
-- Update constitution entry format from `—` to `-` (see R-002)
-- Consider adding GitHub Actions workflow for automated awesome-lint on PRs
-- Consider switching license from MIT to CC0 (maintainer decision)
+| Violation | Why Needed | Simpler Alternative Rejected Because |
+|-----------|------------|-------------------------------------|
+| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
+| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
