@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch:*)",
+      "Bash(/Users/bkowshik/code/healthkowshik/awesome-spec-kit/.specify/scripts/bash/create-new-feature.sh:*)"
+    ]
+  }
+}
