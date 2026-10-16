@@ -12,6 +12,7 @@
 ## Spec-Kit Ecosystem
 
 - [cline-spec-kit-workflows](https://github.com/JRedeker/cline-spec-kit-workflows) - Comprehensive workflow files for spec-driven development in the Cline AI coding agent.
+- [Entalpa](https://entalpa.com/spec-kit) - Folds a public Spec Kit repository's feature specs into one current backlog with statuses from tasks.md, viewable without an account.
 - [iac-spec-kit](https://github.com/IBM/iac-spec-kit) - Domain-specific implementation of spec-driven development optimized for infrastructure-as-code workflows with Terraform, Pulumi, and Ansible.
 - [lite-kits](https://github.com/tmorgan181/lite-kits) - Lightweight add-ons for Spec Kit including project orientation, Git commands, and multi-agent collaboration features.
 - [piv-speckit](https://github.com/galando/piv-speckit) - Combines Prime-Implement-Validate methodology with Spec Kit for structured specifications and strict test-driven development.
