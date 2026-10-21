@@ -78,6 +78,7 @@
 - [spec-kit-chinese](https://github.com/888888888881/spec-kit-chinese) - Chinese localization of GitHub Spec Kit providing translated templates and documentation.
 - [spec-kit-cn](https://github.com/Linfee/spec-kit-cn) - Complete Chinese localization of the Spec Kit toolkit with translated workflow and methodology documents.
 - [spec-kit (zh-TW)](https://github.com/doggy8088/spec-kit) - Traditional Chinese localization of the Spec Kit toolkit for Taiwanese developers.
+- [VeriSpec](https://github.com/godikemahesh/verispec) - Spec-driven quality engineering framework turning specifications into traceable test strategies, native tests, and release evidence.
 
 ## Contributing
 
